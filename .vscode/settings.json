@@ -1,0 +1,7 @@
+{
+    "eslint.enable": false,
+    "jshint.enable": false,
+    "standard.enable": false,
+    "tslint.enable": false,
+    "vsicons.presets.angular": false
+}
