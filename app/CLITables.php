@@ -1,4 +1,5 @@
 <?php namespace App;
+
 class CLITables
 {
     private $string_array;
@@ -243,6 +244,5 @@ public function long_list($values=null)
     
 }
 // --------------------------------------------------------------------
-
 
 }

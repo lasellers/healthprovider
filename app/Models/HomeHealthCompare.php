@@ -2,6 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+//use Monolog\Logger;
+//use Monolog\Handler\StreamHandler;
+
+use Illuminate\Support\Facades\Log;
+
 class HE3A extends Model  {
     
     protected $table='healthproviders';
@@ -24,6 +29,20 @@ class HE3A extends Model  {
     // --------------------------------------------------------------------
     public static function log($array)
     {
+        $data=[
+        'name'=>isset($array['name'])?$array['name']:'',
+        'operation'=>isset($array['operation'])?$array['operation']:'',
+        'operations'=>isset($array['operations'])?$array['operations']:'',
+        'results'=>isset($array['results'])?$array['results']:'',
+        ];
+        
+        //$log = new Logger($this->table);
+        //$log->pushHandler(new StreamHandler(storage_path().DIRECTORY_SEPARATOR.$this->table.'.log', Logger::INFO));
+        //$log->info($data);
+        
+        Log::info($data);
+        
+        
         /*				//
         $log=new \App\CronLogs([
         'name'=>isset($array['name'])?$array['name']:'',
