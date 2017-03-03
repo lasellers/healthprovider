@@ -8,7 +8,5 @@ Homestead.json
 Homestead.yaml
 .env
 /public/invalid_domains.txt
-/public/HHC.csv
-/public/HHC.html
-/public/NHC.csv
-/public/NHC.html
+/public/HHC.*
+/public/NHC.*
