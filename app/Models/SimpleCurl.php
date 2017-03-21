@@ -17,6 +17,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
+use \App\CLI as CLI;
+
 class SimpleCurl extends \App\Console\Commands\DebugCommand
 {
     private $config=null;

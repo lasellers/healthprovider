@@ -1,13 +1,13 @@
-<?php namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-//use Monolog\Logger;
-//use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 use Illuminate\Support\Facades\Log;
 
-class HE3B extends Model  {
+class NursingHomeCompareModel extends BaseEloquentModel  {
     
     protected $table='healthproviders';
     public $timestamps=true;

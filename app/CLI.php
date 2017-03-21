@@ -1,4 +1,7 @@
 <?php namespace App;
+
+use Illuminate\Support\Facades\Log;
+
 class CLI
 {
     /*
@@ -126,6 +129,7 @@ class CLI
     
     public static function abort($str)
     {
+        Log::error($str);
         CLI::println($str);
         exit;
     }
@@ -133,18 +137,21 @@ class CLI
     
     public static function info($str)
     {
+        Log::info($str);
         CLI::println($str);
     }
     // --------------------------------------------------------------------
     
     public static function line($str)
     {
+        Log::info($str);
         CLI::println($str);
     }
     // --------------------------------------------------------------------
     
     public static function error($str)
     {
+        Log::error($str);
         CLI::println($str);
     }
     // --------------------------------------------------------------------

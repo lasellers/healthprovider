@@ -3,6 +3,9 @@
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 /**
 
 Main utility model for NursingHomeCompare,HomeHealthCompare, etc.
@@ -207,24 +210,25 @@ class HealthProviders {
     /**
     
     **/
+    /*
     public static function adjust_memory()
     {
-        $memory_limit = ini_get('memory_limit');
-        if (preg_match('/^(\d+)(.)$/', $memory_limit, $matches))
-        {
-            if ($matches[2] == 'M')
-            {
-                $memory_limit = $matches[1] * 1024 * 1024;
-            }
-            else if ($matches[2] == 'K')
-            {
-                $memory_limit = $matches[1] * 1024;
-            }
-        }
-        $memory_limit/=(1024*1024);
-        if($memory_limit<1024)
-        ini_set('memory_limit','1024M');
+    $memory_limit = ini_get('memory_limit');
+    if (preg_match('/^(\d+)(.)$/', $memory_limit, $matches))
+    {
+    if ($matches[2] == 'M')
+    {
+    $memory_limit = $matches[1] * 1024 * 1024;
     }
+    else if ($matches[2] == 'K')
+    {
+    $memory_limit = $matches[1] * 1024;
+    }
+    }
+    $memory_limit/=(1024*1024);
+    if($memory_limit<1024)
+    ini_set('memory_limit','1024M');
+    }*/
     
     /**
     
@@ -368,7 +372,6 @@ class HealthProviders {
             }
             
             unset($data);
-            //            break;
         }
         
         /* if no emails yet, try doing a whois lookup of the domain and get those */

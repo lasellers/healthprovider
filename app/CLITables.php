@@ -1,5 +1,7 @@
 <?php namespace App;
 
+use Illuminate\Support\Facades\Log;
+
 class CLITables
 {
     private $string_array;
@@ -9,8 +11,7 @@ class CLITables
     private $t=null;
     // --------------------------------------------------------------------
     
-    public function __construct($string_array, $min_sizes_array=null,
-    $align='left')
+    public function __construct($string_array, $min_sizes_array=null, $align='left')
     {
         //
         if($min_sizes_array!=null&&count($string_array)!=count($min_sizes_array))

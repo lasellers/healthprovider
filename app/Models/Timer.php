@@ -148,6 +148,7 @@ class Timer
     {
         \App\CLI::println($this->memory_used());
     }
+    
     public function memory_used()
     {
         $size=memory_get_usage();

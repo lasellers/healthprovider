@@ -12,6 +12,8 @@ Rational to Release: It was the sole code in a Ubuntu VM that took up 40GB. The 
 
 ## Operations Notes 
 
+Change .env db to your local system. By default uses db name "healthprovider" with Laravel Homestead.
+
 php artisan migrate
 php artisan db:seed
 

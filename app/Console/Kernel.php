@@ -13,10 +13,9 @@ class Kernel extends ConsoleKernel
     * @var array
     */
     protected $commands = [
-    'App\Console\Commands\NursingHomeCompare',
-    'App\Console\Commands\HomeHealthCompare'//,
-    //'App\Console\Commands\NHC',
-    //'App\Console\Commands\HHC',
+    'App\Console\Commands\NursingHomeCompareCommand',
+    'App\Console\Commands\HomeHealthCompareCommand',
+    'App\Console\Commands\StatusCommand'
     ];
     
     /**

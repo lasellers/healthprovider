@@ -3,6 +3,8 @@
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
+use Illuminate\Support\Facades\Log;
+
 /**
 
 Class to query for doman whois information.
@@ -176,7 +178,9 @@ class Whois {
         if(substr(strtolower($domain), 0, 4) == "www.") $domain = substr($domain, 4);/*remove www from domain*/
         $a=explode("/",$domain);
         $domain=$a[0];
+        
         //$this->command->line(" whois: $domain");
+        Log::info(" whois: $domain");
         
         if(preg_match("/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/",$domain))
         {
@@ -259,7 +263,7 @@ class Whois {
             fclose($fp);
         } catch(Exception $e)
         {
-            return ['error'=>'whois failure: '.$e->getMessage()];
+             return ['error'=>'whois failure: '.$e->getMessage()];
         }
         /* */
         
