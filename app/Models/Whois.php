@@ -163,9 +163,7 @@ class Whois {
     "ve"                =>  array("whois.nic.ve"),
     "vg"                =>  array("whois.adamsnames.tc"),
     "yu"                =>  array("whois.ripe.net"),
-    
     "co"                =>  array("whois.nic.co"),
-    
     );
     
     /**

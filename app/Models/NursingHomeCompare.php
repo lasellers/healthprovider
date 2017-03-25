@@ -7,7 +7,7 @@ use Monolog\Handler\StreamHandler;
 
 use Illuminate\Support\Facades\Log;
 
-class NursingHomeCompareModel extends BaseEloquentModel  {
+class NursingHomeCompareModel extends CamelAwareModel  {
     
     protected $table='healthproviders';
     public $timestamps=true;

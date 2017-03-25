@@ -12,6 +12,9 @@ use App\Models\HealthProviders as HealthProviders;
 use App\Models\HomeHealthCompare as HomeHealthCompare;
 use \App\Models\Timer as Timer;
 use \App\Models\Browser as Browser;
+
+use App\Console\Commands\DebugCommand;
+
 /**
 
 Command to process https://data.medicare.gov/views/bg9k-emty/files/69v7QYRkrGAO5T0UZq6wA_vB85PYg5RWxUNb0dkM3w0?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=HHCompare_Revised_FlatFiles.zip
@@ -35,7 +38,7 @@ class HomeHealthCompareCommand extends \App\Console\Commands\DebugCommand
     private $excel_file="HHC.xls";
     private $html_file="HHC.html";
     
-    private $timer=null;
+    private $timer;
     
     /**
     * The console command name.
@@ -135,8 +138,8 @@ class HomeHealthCompareCommand extends \App\Console\Commands\DebugCommand
         /* */
         if($start=='') $start='all';
         if($start!='all') $start=intval($start);
-        $this->info("Start=".$start);
-        $this->info("Options=".$options);
+        $this->output->note("Start=".$start);
+        $this->output->note("Options=".$options);
         
         /* */
         $hp->get_csv($this->download_url,$this->download_zip,$this->unzipped_folder,$this->input_file);
@@ -147,7 +150,7 @@ class HomeHealthCompareCommand extends \App\Console\Commands\DebugCommand
         $handle = fopen($this->input_file, "r");
         if (!$handle)
         {
-            $this->error("Error: Could not open $this->input_file\n");
+            $this->output->error("Error: Could not open $this->input_file\n");
             return;
         }
         
@@ -210,7 +213,7 @@ class HomeHealthCompareCommand extends \App\Console\Commands\DebugCommand
                     $hp->county="";
                     //$hp->found_phone=$hp->phone;
                     
-                    $this->info(" ccn=".$hp->id);
+                    $this->output->note(" ccn=".$hp->id);
                     Log::info(" ccn=".$hp->id);
                     
                     $hp->get_data();

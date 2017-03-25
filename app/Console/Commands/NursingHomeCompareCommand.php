@@ -13,6 +13,8 @@ use App\Models\NursingHomeCompare as NursingHomeCompare;
 use \App\Models\Timer as Timer;
 use \App\Models\Browser as Browser;
 
+use App\Console\Commands\DebugCommand;
+
 /**
 
 Command to process https://data.medicare.gov/views/bg9k-emty/files/CJP62BvKCE7mEG9ufmZCah9VMIm3bbgNVx_07wSgpbs?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=DMG_CSV_DOWNLOAD20150801.zip
@@ -35,7 +37,7 @@ class NursingHomeCompareCommand extends \App\Console\Commands\DebugCommand
     private $excel_file="NHC.xls";
     private $html_file="NHC.html";
     
-    private $timer=null;
+    private $timer;
     
     /**
     * The console command name.
@@ -137,8 +139,8 @@ class NursingHomeCompareCommand extends \App\Console\Commands\DebugCommand
         /* */
         if($start=='') $start='all';
         if($start!='all') $start=intval($start);
-        $this->info("Start=".$start);
-        $this->info("Options=".$options);
+        $this->output->note("Start=".$start);
+        $this->output->note("Options=".$options);
         
         /* */
         $hp->get_csv($this->download_url,$this->download_zip,$this->unzipped_folder,$this->input_file);
@@ -149,7 +151,7 @@ class NursingHomeCompareCommand extends \App\Console\Commands\DebugCommand
         $handle = fopen($this->input_file, "r");
         if (!$handle)
         {
-            $this->error("Error: Could not open $this->input_file\n");
+            $this->output->error("Error: Could not open $this->input_file\n");
             return;
         }
         
@@ -212,7 +214,7 @@ class NursingHomeCompareCommand extends \App\Console\Commands\DebugCommand
                     $hp->county=$data[$lookup['COUNTY_NAME']];
                     //$hp->found_phone=$hp->phone;
                     
-                    $this->info(" provnum=".$hp->id);
+                    $this->output->note(" provnum=".$hp->id);
                     Log::info(" provnum=".$hp->id);
                     
                     $hp->get_data();

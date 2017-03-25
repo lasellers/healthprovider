@@ -15,6 +15,8 @@ use App\Models\NursingHomeCompareModel as NursingHomeCompareModel;
 use \App\Models\Timer as Timer;
 use \App\Models\Browser as Browser;
 
+use App\Console\Commands\DebugCommand;
+
 class StatusCommand extends \App\Console\Commands\DebugCommand
 {
     /**
@@ -85,15 +87,6 @@ class StatusCommand extends \App\Console\Commands\DebugCommand
         array_keys($rows[0]),
         array_values($rows)
         );
-        
-        /*
-        $rows = HomeHealthCompareModel::all();
-        foreach($rows as $row)
-        {
-        $this->output->writeln("created_at=".$row->created_at."\n");
-        $this->output->writeln("createdAt=".$row->createdAt."\n");
-        }
-        */
         
     }
     
