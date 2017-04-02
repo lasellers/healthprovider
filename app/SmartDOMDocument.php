@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace App;
 
 /**
 * This class overcomes a few common annoyances with the DOMDocument class,
