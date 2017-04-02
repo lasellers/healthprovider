@@ -72,7 +72,6 @@ class StatusCommand extends Command
     // --------------------------------------------------------------------
     public function fire()
     {
-        $this->print_args();
         $options = $this->argument("options");
 
         $this->call_command($options);
@@ -86,7 +85,6 @@ class StatusCommand extends Command
         $this->output->title($this->description);
 
         $rows = HomeHealthCompareModel::all()->toArray();
-
         $this->output->table(
             array_keys($rows[0]),
             array_values($rows)

@@ -17,11 +17,19 @@ Change .env db to your local system. By default uses db name "healthprovider" wi
 php artisan migrate
 php artisan db:seed
 
-### php artisan nursinghomecompare
+### php artisan healthprovider:nhc
 
-generates public\nhc.csv
+Generates public\nhc.csv
 
-### php artisan homehealthcompare
+### php artisan healthprovider:hhc
 
-generates public\hhc.csv
+Generates public\hhc.csv
+
+### php artisan healthprovider:status
+
+Shows status info.
+
+TODO:
+
+* Write to DB
 
