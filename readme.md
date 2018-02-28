@@ -1,10 +1,8 @@
 # HealthProvider
 
-This is a set of long running PHP/Laravel data mining console commands to generate csvs containing phone, address, etc information of health companies. 
+This is a set of long running PHP/Laravel 5 data mining console commands to generate csvs containing phone, address, etc information of health companies. 
 
-As this was a quick one-off project that was never meant to run on production --  
-the raw csv output being the goal --
-the original code was irrelevant.
+As this was a quick one-off project that was never meant to run on production -- the raw csv output being the goal -- the original code was irrelevant.
 As such, from time to I use the original code-base for various experiments such as:
 1) Learning to upgrade from Laravel 4.x to 5.x
 2) Learning how to write Dockerfile/Docker-compose files for Laravel projects.
@@ -13,6 +11,8 @@ Rational to Release:
 It was the sole code in a Ubuntu VM that took up 40GB. 
 That is, the code, the last time run to completion, cached just slightly less than 40GB of data. 
 Breaking the code out of the original Vagrant VM allowed me to delete the 40GB VM and keep the code for experimentation purposes.
+
+Note: The artisan CLI commands generate csv, html and txt files that are stored directly to the public/ folder.
 
 ## Version Notes
 
@@ -28,7 +28,7 @@ To start up everything from the CLI:
 
 ```docker-compose up --build```
 
-To bring up a CLI instead the running app:
+To bring up a CLI inside the running app:
 
 ```docker exec -it healthprovider_app_1 /bin/bash```
 
