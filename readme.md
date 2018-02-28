@@ -40,6 +40,8 @@ mysql -u root -p
 (secret)
 ```
 
+Browse locally at [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+
 ## Operations Notes 
 
 Change .env db to your local system. By default uses db name "healthprovider" with Laravel Homestead.
