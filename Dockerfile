@@ -6,7 +6,7 @@
 ## docker run -v "C:\Users\Lenovo\Dropbox\projects\PHP\healthprovider\:/var/www/" -d --name hp lasellers/healthprovider
 # docker ps --all
 # docker exec -it hp /bin/bash
-FROM php:7.2.2-fpm
+FROM php:7.0.4-fpm
 RUN apt-get update
 RUN apt-get install -y nano
 RUN apt-get install -y libmcrypt-dev \
