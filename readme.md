@@ -63,3 +63,33 @@ Shows status info.
 
 * Write to DB instead of just the *.csv files.
 
+## Install References
+
+https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
+
+https://composer.github.io/pubkeys.html
+
+https://phpunit.de/getting-started/phpunit-6.html
+
+    php composer.phar require --dev phpunit/phpunit ^5.7
+    ./vendor/bin/phpunit --version
+
+    php composer.phar require --dev symfony/browser-kit
+    php composer.phar require --dev symfony/css-selector
+     
+    ./vendor/bin/phpunit
+
+https://www.rosehosting.com/blog/install-npm-on-ubuntu-16-04/
+
+    curl -sL https://deb.nodesource.com/setup_7.x | bash -
+    sudo apt-get install -y nodejs
+
+
+    php -v
+    node -v
+    npm -v
+    ./vendor/bin/phpunit --version
+    php composer.phar --version
+    php composer.phar info
+    
+
