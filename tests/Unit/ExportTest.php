@@ -10,7 +10,7 @@ use App\Console\Commands\HomeHealthCompareCommand;
 use App\Console\Commands\NursingHomeCompareCommand;
 use App\Console\Commands\StatusCommand;
 
-use App\Models\HealthProviders;
+use App\HealthProviders;
 
 use App\Models\NursingHomeCompareModel;
 use App\Models\HomeHealthCompareModel;

@@ -78,6 +78,9 @@
             @endif
 
             <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+
                 <div class="title m-b-md">
                     Health Provider
                 </div>
@@ -89,6 +92,30 @@
                     <a href="/hhc.csv">HHC.csv</a>
                     <a href="/hhc.dup.csv">HHC.dup.csv</a>
                     <a href="/hhc.html">HHC.html</a>
+                    <a href="/invalid_domains.txt">invalid_domains.txt</a>
+                </div>
+
+
+                </div>
+                </div>                
+
+                <div class="row">
+                    <div class="col-md-12">
+                <br><br><br>
+                To run artisan tasks:<br>
+
+<code>
+                docker-compose up --build<br>
+                docker exec -it healthprovider_app_1 /bin/bash<br>
+</code>
+
+<code>
+                php artisan healthprovider:hhc<br>
+                php artisan healthprovider:nhc<br>
+                php artisan healthprovider:status<br>
+</code>
+
+                    </div>
                 </div>
 
                 <br><br><br>
@@ -96,6 +123,7 @@
                 <div class="links">
                 <a href="https://github.com/lasellers/healthprovider">https://github.com/lasellers/healthprovider</a>
                 </div>
+
             </div>
         </div>
     </body>

@@ -33,7 +33,8 @@ https://www.medicare.gov/download/downloaddb.asp
 
 class HomeHealthCompareCommand extends Command
 {
-    private $download_url="https://data.medicare.gov/views/bg9k-emty/files/69v7QYRkrGAO5T0UZq6wA_vB85PYg5RWxUNb0dkM3w0?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=HHCompare_Revised_FlatFiles.zip";
+    //private $download_url="https://data.medicare.gov/views/bg9k-emty/files/69v7QYRkrGAO5T0UZq6wA_vB85PYg5RWxUNb0dkM3w0?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=HHCompare_Revised_FlatFiles.zip";
+    private $download_url="https://data.medicare.gov/views/bg9k-emty/files/aeee9175-6b47-4b0d-8c3c-2757ebb7db89?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=HHCompare_Revised_FlatFiles.zip";
     private $download_zip="HHCompare_Revised_FlatFiles.zip";
     private $unzipped_folder="HHCompare_Revised_FlatFiles/";
     private $input_file="HHCompare_Revised_FlatFiles/HHC_SOCRATA_PRVDR.csv";
@@ -218,7 +219,7 @@ class HomeHealthCompareCommand extends Command
                         $emails = array_keys($hp->ordered_emails);
                         $domains = array_keys($hp->ordered_domains);
 
-                        $output_data = \App\Models\HealthProviders::pack_tsv([
+                        $output_data = \App\HealthProviders::pack_tsv([
                             ($line_index),
                             $hp->id,
                             $hp->name,

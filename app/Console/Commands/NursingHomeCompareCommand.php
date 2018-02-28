@@ -32,6 +32,7 @@ use App\Whois as Whois;
 class NursingHomeCompareCommand extends Command
 {
     private $download_url = "https://data.medicare.gov/views/bg9k-emty/files/CJP62BvKCE7mEG9ufmZCah9VMIm3bbgNVx_07wSgpbs?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=DMG_CSV_DOWNLOAD20150801.zip";
+   // private $download_url = "https://data.medicare.gov/views/bg9k-emty/files/bd928976-7757-4649-a32c-5e4c0cec4fc2?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=NursingHomeCompare_Revised_FlatFiles.zip";
     private $download_zip = "DMG_CSV_DOWNLOAD20150801.zip";
     private $unzipped_folder = "DMG_CSV_DOWNLOAD20150801/";
     private $input_file = "DMG_CSV_DOWNLOAD20150801/ProviderInfo_Download.csv";

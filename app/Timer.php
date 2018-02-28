@@ -1,6 +1,5 @@
 <?php namespace App;
 
-
 class Timer
 {
     private $running = true;

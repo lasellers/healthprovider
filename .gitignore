@@ -10,3 +10,6 @@ Homestead.yaml
 /public/invalid_domains.txt
 /public/HHC.*
 /public/NHC.*
+laravel.log
+/tmp
+cache/*
