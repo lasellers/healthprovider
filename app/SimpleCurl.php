@@ -170,13 +170,15 @@ class SimpleCurl {
 			return null;
 		}
 
-		$this->io->info( " >>> download_file: url=$url local_file=$local_file" );
+		$this->io->note( " >>> download_file: url=$url local_file=$local_file" );
+		$this->io->progressStart(5);
 
 		try {
 			$curl = curl_init( $url );
 		} catch ( Exception $e ) {
 			return [ 'error' => 'curl_init failure: ' . $e->getMessage() ];
 		}
+		$this->io->progressAdvance(1);
 
 		curl_setopt( $curl, CURLOPT_URL, $url );
 		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
@@ -187,16 +189,20 @@ class SimpleCurl {
 		$data = curl_exec( $curl );
 		file_put_contents( $local_file, $data );
 		unset( $data );
+		$this->io->progressAdvance(1);
 
 		$filetime = curl_getinfo( $curl, CURLINFO_FILETIME );
 		if ( $filetime == - 1 ) {
 			$filetime = time();
 		}
 		touch( $local_file, $filetime );
+		$this->io->progressAdvance(1);
 
 		curl_close( $curl );
+		$this->io->progressAdvance(1);
 
-		$this->io->info( " >>> download_file: url=$url file time=$filetime size=" . filesize( $local_file ) );
+		$this->io->note( " >>> download_file: url=$url file time=$filetime size=" . filesize( $local_file ) );
+		$this->io->progressFinish();
 
 		$this->sleep_between_calls();
 	}
