@@ -22,6 +22,24 @@ Breaking the code out of the original Vagrant VM allowed me to delete the 40GB V
 
 * 1.0 Aug 2015 - Quick build out of PHP 5.x/Laravel 4 version that ran in it's own Ubuntu 14 VM.
 
+## Starting up locally with Docker
+
+To start up everything from the CLI:
+
+```docker-compose up --build```
+
+To bring up a CLI instead the running app:
+
+```docker exec -it healthprovider_app_1 /bin/bash```
+
+To bring up the MySql CLI inside the DB container:
+
+```
+docker exec -it healthprovider_database_1 /bin/bash
+mysql -u root -p
+(secret)
+```
+
 ## Operations Notes 
 
 Change .env db to your local system. By default uses db name "healthprovider" with Laravel Homestead.
@@ -29,15 +47,15 @@ Change .env db to your local system. By default uses db name "healthprovider" wi
 php artisan migrate
 php artisan db:seed
 
-### php artisan healthprovider:nhc
+`php artisan healthprovider:nhc`
 
 Generates public\nhc.csv
 
-### php artisan healthprovider:hhc
+`php artisan healthprovider:hhc`
 
 Generates public\hhc.csv
 
-### php artisan healthprovider:status
+`php artisan healthprovider:status`
 
 Shows status info.
 

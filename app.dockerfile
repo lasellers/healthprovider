@@ -7,7 +7,7 @@
 # docker-compose exec app php artisan key:generate
 # docker-compose exec app php artisan optimize
 # docker-compose exec app php artisan migrate --seed
-FROM php:7.0.4-fpm
+FROM php:7.2.2-fpm
 
 RUN apt-get update 
 RUN apt-get install -y nano
