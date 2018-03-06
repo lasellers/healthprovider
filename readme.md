@@ -6,6 +6,7 @@ As this was a quick one-off project that was never meant to run on production --
 As such, from time to I use the original code-base for various experiments such as:
 1) Learning to upgrade from Laravel 4.x to 5.x
 2) Learning how to write Dockerfile/Docker-compose files for Laravel projects.
+3) Using 1+2 as an excuse to cleanup the code. :)
 
 Rational to Release: 
 It was the sole code in a Ubuntu VM that took up 40GB. 
@@ -14,6 +15,7 @@ Breaking the code out of the original Vagrant VM allowed me to delete the 40GB V
 
 Note: The artisan CLI commands generate csv, html and txt files that are stored directly to the public/ folder.
 
+
 ## Version Notes
 
 * 1.2 Feb 2018 - Created Dockerfile and docker-compose.yml as an experiment to bootup the project in docker and leave Vagrant, etc behind.
@@ -21,6 +23,7 @@ Note: The artisan CLI commands generate csv, html and txt files that are stored 
 * 1.1 Feb 2017 - Recast it as a PHP 7.1/Laravel 5.4 app setup to use Laravel/Homestead VM. I love the Vagrant integration of homestead because this means I could change all the caching folders to point to /tmp, and so do a vagrant destroy homestead-7 if the file caching got excessive, then vagrant up a clean copy. Excellent. Would have saved me 40GB of space and a lot of hassle if it had been around when I actually needed the code. :) 
 
 * 1.0 Aug 2015 - Quick build out of PHP 5.x/Laravel 4 version that ran in it's own Ubuntu 14 VM.
+
 
 ## Starting up locally with Docker
 
@@ -42,6 +45,7 @@ mysql -u root -p
 
 Browse locally at [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
+
 ## Operations Notes 
 
 Change .env db to your local system. By default uses db name "healthprovider" with Laravel Homestead.
@@ -61,9 +65,6 @@ Generates public\hhc.csv
 
 Shows status info.
 
-## TODO:
-
-* Write to DB instead of just the *.csv files.
 
 ## Install References
 
@@ -95,3 +96,10 @@ https://www.rosehosting.com/blog/install-npm-on-ubuntu-16-04/
     php composer.phar info
     
 
+## TODO:
+
+* Generally clean up everything
+* Write to DB instead of just the *.csv files so the new Status command will display data.
+* Add xdebug to docker and hook it up to PHPStorm
+* Add a "clear" command to remove all data from file cache.
+* Explore composer looking for modules that handle caching and move to using those as an experiment.
